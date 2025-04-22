@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:islami_app_2/core/resources/asset_manager.dart';
 import 'package:islami_app_2/core/resources/colors_manager.dart';
 
 import '../models/sura.dart';
