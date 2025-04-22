@@ -13,7 +13,8 @@ class Quran extends StatefulWidget {
 
 class _QuranState extends State<Quran> {
   List<SuraModel> sura=[
-    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.quranSura)
+    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.quranSura),
+    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.quranSura),
   ];
   @override
   Widget build(BuildContext context) {

@@ -9,37 +9,47 @@ class SuraComponent extends StatelessWidget {
   final SuraModel sura;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 283,
-      height: 150,
-      decoration: BoxDecoration(
-        color: ColorsManager.gold,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          Column(
-            children: [
-              Text(sura.enSuraName,style: TextStyle(
-                color: ColorsManager.black,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),),
-              Text(sura.arSuraName,style: TextStyle(
-                color: ColorsManager.black,
-                fontSize: 24,
-                fontWeight: FontWeight.w700,
-              ),),
-              Text("${sura.numberOfVerses} Verses",style: TextStyle(
-                color: ColorsManager.black,
-                fontSize: 14,
-                fontWeight: FontWeight.w700,
-              ),),
-
-            ],
-          ),
-          Image.asset(AssetManager.readingAndQuran,color: ColorsManager.black,)
-        ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: Container(
+        width: 283,
+        height: 150,
+        decoration: BoxDecoration(
+          color: ColorsManager.gold,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Spacer(),
+                  Text(sura.enSuraName,style: TextStyle(
+                    color: ColorsManager.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),),
+                  Spacer(),
+                  Text(sura.arSuraName,style: TextStyle(
+                    color: ColorsManager.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),),
+                  Spacer(),
+                  Text("${sura.numberOfVerses} Verses",style: TextStyle(
+                    color: ColorsManager.black,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                  ),),
+                  Spacer(flex: 2,),
+                ],
+              ),
+            ),
+            SizedBox(width:160,child: Image.asset(sura.image,color: ColorsManager.black,))
+          ],
+        ),
       ),
     );
   }
