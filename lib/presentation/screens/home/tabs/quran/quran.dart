@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/sura.dart';
 import '../../../../../core/resources/colors_manager.dart';
 import '../../../../../core/resources/asset_manager.dart';
+import 'models/sura.dart';
 
 class Quran extends StatefulWidget {
   const Quran({super.key});
@@ -10,6 +12,9 @@ class Quran extends StatefulWidget {
 }
 
 class _QuranState extends State<Quran> {
+  List<SuraModel> sura=[
+    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.readingAndQuran)
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,7 +34,9 @@ class _QuranState extends State<Quran> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 30,),
+              padding: const EdgeInsets.only(
+                left: 30,
+              ),
               child: SizedBox(
                 width: 291,
                 height: 171,
@@ -44,13 +51,20 @@ class _QuranState extends State<Quran> {
               height: 20,
             ),
             Text(
-              "Most Recently",
+              " Most Recently",
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 color: ColorsManager.white,
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            ListView.builder(scrollDirection: Axis.horizontal,itemCount: sura.length,itemBuilder: (context,index){
+              return SuraComponent(sura:sura[index] );
+            }),
+            SizedBox(width: 15,),
           ],
         ),
       ),
