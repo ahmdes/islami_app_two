@@ -13,7 +13,7 @@ class Quran extends StatefulWidget {
 
 class _QuranState extends State<Quran> {
   List<SuraModel> sura=[
-    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.readingAndQuran)
+    SuraModel(arSuraName: "الأنبياء", enSuraName: "Al-Anbiya", numberOfVerses: 112, image: AssetManager.quranSura)
   ];
   @override
   Widget build(BuildContext context) {
@@ -61,9 +61,12 @@ class _QuranState extends State<Quran> {
             SizedBox(
               height: 15,
             ),
-            ListView.builder(scrollDirection: Axis.horizontal,itemCount: sura.length,itemBuilder: (context,index){
-              return SuraComponent(sura:sura[index] );
-            }),
+            SizedBox(
+              height: 170,
+              child: ListView.builder(scrollDirection: Axis.horizontal,itemCount: sura.length,itemBuilder: (context,index){
+                return SuraComponent(sura:sura[index] );
+              }),
+            ),
             SizedBox(width: 15,),
           ],
         ),

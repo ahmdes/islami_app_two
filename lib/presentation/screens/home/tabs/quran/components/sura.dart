@@ -38,6 +38,7 @@ class SuraComponent extends StatelessWidget {
 
             ],
           ),
+          Image.asset(AssetManager.readingAndQuran,color: ColorsManager.black,)
         ],
       ),
     );

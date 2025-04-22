@@ -24,15 +24,6 @@ class AssetManager{
   static const String sebhaBG="$base/sebha_bg.png";
   static const String headOfSebha="$base/head_of_sebha.png";
   static const String elementOfSebha="$base/elementsOfSebha.png";
-
-
-
-
-
-
-
-
-
-
+  static const String quranSura="$base/quran_sura.png";
 
 }
