@@ -46,7 +46,7 @@ class SuraComponent extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width:160,child: Image.asset(sura.image,color: ColorsManager.black,))
+            SizedBox(width:160,child: Image.asset(sura.image!,color: ColorsManager.black,))
           ],
         ),
       ),

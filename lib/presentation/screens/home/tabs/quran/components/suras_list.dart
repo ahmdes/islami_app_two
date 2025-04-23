@@ -19,10 +19,9 @@ class _SurasListState extends State<SurasList> {
           children: [
             Stack(
               children: [
-                SizedBox(height: 80,width: 80,child: Image.asset(AssetManager.decorationOfSuraNumber)),
+                SizedBox(height: 65,width: 80,child: Image.asset(AssetManager.decorationOfSuraNumber)),
                 Positioned(
-
-                  top: 25,
+                  top: 20,
                   left: widget.indexOfSura<=8?33:widget.indexOfSura<=98&&widget.indexOfSura>=9?28:22,
                   child: Text("${widget.indexOfSura+1}",style: TextStyle(
                     color: ColorsManager.white,
