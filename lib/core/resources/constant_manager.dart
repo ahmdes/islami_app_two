@@ -4,15 +4,17 @@ import 'asset_manager.dart';
 class ConstantManager {
   static List<SuraModel> sura = [
     SuraModel(
-        arSuraName: "الأنبياء",
-        enSuraName: "Al-Anbiya",
-        numberOfVerses: 112,
-        image: AssetManager.quranSura),
+      arSuraName: "الأنبياء",
+      enSuraName: "Al-Anbiya",
+      numberOfVerses: 112,
+      image: AssetManager.quranSura,
+    ),
     SuraModel(
-        arSuraName: "الأنبياء",
-        enSuraName: "Al-Anbiya",
-        numberOfVerses: 112,
-        image: AssetManager.quranSura),
+      arSuraName: "الأنبياء",
+      enSuraName: "Al-Anbiya",
+      numberOfVerses: 112,
+      image: AssetManager.quranSura,
+    ),
   ];
 
   static List<SuraModel> surasList = [
