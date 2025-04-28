@@ -13,12 +13,13 @@ class QuranDetails extends StatefulWidget {
   @override
   State<QuranDetails> createState() => _QuranDetailsState();
 }
+
 class _QuranDetailsState extends State<QuranDetails> {
-  String fileContent="";
+  String fileContent = "";
   @override
   Widget build(BuildContext context) {
-    if(fileContent.isEmpty) {
-      loadSuraContent(widget.indexOfSura+1);
+    if (fileContent.isEmpty) {
+      loadSuraContent(widget.indexOfSura + 1);
     }
     return Scaffold(
       appBar: AppBar(
@@ -69,31 +70,33 @@ class _QuranDetailsState extends State<QuranDetails> {
                 ),
               ],
             ),
-            fileContent.isEmpty?CircularProgressIndicator():Text(fileContent,style: TextStyle(
-              color: ColorsManager.gold,
-              fontWeight: FontWeight.w700,
-              fontSize: 20,
-            ),),
+            fileContent.isEmpty
+                ? CircularProgressIndicator()
+                : Text(
+                    fileContent,
+                    style: TextStyle(
+                      color: ColorsManager.gold,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                    ),
+                  ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        // Image.asset(name)
-      ],),
+      bottomNavigationBar: Image.asset(
+        AssetManager.mosqueOfBottom,
+      ),
     );
   }
 
-  void loadSuraContent(int index)async
-  {
-    String filePath="assets/files/Suras/$index.txt";
-    fileContent= await rootBundle.loadString(filePath);
-    List<String>suraLines=fileContent.trim().split("\n");
-    for(int i=0;i<suraLines.length;i++)
-      {
-        suraLines[i]+="[${i+1}]";
-      }
-    fileContent=suraLines.join();
-    setState(() {
-    });
+  void loadSuraContent(int index) async {
+    String filePath = "assets/files/Suras/$index.txt";
+    fileContent = await rootBundle.loadString(filePath);
+    List<String> suraLines = fileContent.trim().split("\n");
+    for (int i = 0; i < suraLines.length; i++) {
+      suraLines[i] += "[${i + 1}]";
+    }
+    fileContent = suraLines.join();
+    setState(() {});
   }
 }
