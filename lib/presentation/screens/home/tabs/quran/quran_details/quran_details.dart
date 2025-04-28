@@ -17,14 +17,14 @@ class _QuranDetailsState extends State<QuranDetails> {
   String fileContent="";
   @override
   Widget build(BuildContext context) {
-    loadSuraContent(widget.indexOfSura+1);
+    if(fileContent.isEmpty) {
+      loadSuraContent(widget.indexOfSura+1);
+    }
     return Scaffold(
-      backgroundColor: ColorsManager.black,
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: ColorsManager.gold,
         ),
-        backgroundColor: ColorsManager.black,
         title: Text(
           widget.sura.enSuraName,
           style: TextStyle(
@@ -37,7 +37,7 @@ class _QuranDetailsState extends State<QuranDetails> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -77,6 +77,9 @@ class _QuranDetailsState extends State<QuranDetails> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(items: [
+        // Image.asset(name)
+      ],),
     );
   }
 
@@ -84,6 +87,12 @@ class _QuranDetailsState extends State<QuranDetails> {
   {
     String filePath="assets/files/Suras/$index.txt";
     fileContent= await rootBundle.loadString(filePath);
+    List<String>suraLines=fileContent.trim().split("\n");
+    for(int i=0;i<suraLines.length;i++)
+      {
+        suraLines[i]+="[${i+1}]";
+      }
+    fileContent=suraLines.join();
     setState(() {
     });
   }
