@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import '../../../../../../core/resources/asset_manager.dart';
 import '../../../../../../core/resources/colors_manager.dart';
+import 'components/sura_content.dart';
 
 class QuranDetails extends StatefulWidget {
   const QuranDetails(
@@ -23,72 +24,59 @@ class _QuranDetailsState extends State<QuranDetails> {
     }
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(
-          color: ColorsManager.gold,
-        ),
         title: Text(
           widget.sura.enSuraName,
-          style: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 20,
-            color: ColorsManager.gold,
-          ),
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Spacer(
-                  flex: 1,
-                ),
-                Image.asset(
-                  AssetManager.leftOfQuranDetails,
-                ),
-                Spacer(
-                  flex: 7,
-                ),
-                Text(
-                  widget.sura.arSuraName,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                    color: ColorsManager.gold,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Spacer(
+                    flex: 1,
                   ),
-                ),
-                Spacer(
-                  flex: 7,
-                ),
-                Image.asset(
-                  AssetManager.rightOfQuranDetails,
-                ),
-                Spacer(
-                  flex: 1,
-                ),
-              ],
-            ),
-            fileContent.isEmpty
-                ? CircularProgressIndicator()
-                : Text(
-                    fileContent,
+                  Image.asset(
+                    AssetManager.leftOfQuranDetails,
+                  ),
+                  Spacer(
+                    flex: 7,
+                  ),
+                  Text(
+                    widget.sura.arSuraName,
                     style: TextStyle(
-                      color: ColorsManager.gold,
+                      fontSize: 24,
                       fontWeight: FontWeight.w700,
-                      fontSize: 20,
+                      color: ColorsManager.gold,
                     ),
                   ),
-          ],
+                  Spacer(
+                    flex: 7,
+                  ),
+                  Image.asset(
+                    AssetManager.rightOfQuranDetails,
+                  ),
+                  Spacer(
+                    flex: 1,
+                  ),
+                ],
+              ),
+              fileContent.isEmpty
+                  ? CircularProgressIndicator()
+                  : SuraContent(content:fileContent),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Image.asset(
-        AssetManager.mosqueOfBottom,
+        AssetManager.quran_details_bottom_image,
       ),
     );
   }
-
   void loadSuraContent(int index) async {
     String filePath = "assets/files/Suras/$index.txt";
     fileContent = await rootBundle.loadString(filePath);
@@ -100,3 +88,5 @@ class _QuranDetailsState extends State<QuranDetails> {
     setState(() {});
   }
 }
+
+
