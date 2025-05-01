@@ -28,8 +28,9 @@ class AssetManager{
   static const String decorationOfSuraNumber="$base/decoration_sura_number.png";
   static const String leftOfQuranDetails="$base/leftOfQuranDetails.png";
   static const String rightOfQuranDetails="$base/rightOfQuranDetails.png";
-  static const String quran_details_bottom_image="$base/quran_details_bottom_image.png";
-  static const String hadith_back_ground="$base/hadith_back_ground.png";
-  static const String hadith_card_back_ground="$base/HadithCardBackGround.png";
-
+  static const String quranDetailsBottomImage="$base/quran_details_bottom_image.png";
+  static const String hadithBackGround="$base/hadith_back_ground.png";
+  static const String hadithCardBackGround="$base/HadithCardBackGround.png";
+  static const String radioBackGround="$base/radio_back_ground.png";
+  static const String hadithBottomImage="$base/hadith_bottom_image.png";
 }

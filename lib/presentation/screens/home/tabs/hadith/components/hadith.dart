@@ -14,11 +14,17 @@ class HadithComponent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 20,
-        horizontal: 20,
       ),
       child: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>HadithDetails(hadith: hadith,),),);
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HadithDetails(
+                hadith: hadith,
+              ),
+            ),
+          );
         },
         child: Container(
           decoration: BoxDecoration(
@@ -27,52 +33,48 @@ class HadithComponent extends StatelessWidget {
             ),
             color: ColorsManager.gold,
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Stack(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Image.asset(
-                              AssetManager.leftOfQuranDetails,
-                              color: ColorsManager.black,
-                            ),
-                          ),
-                          Expanded(
-                            flex: 2,
-                            child: Text(
-                              textAlign: TextAlign.center,
-                              textDirection: TextDirection.rtl,
-                              hadith.title,
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w700,
-                                color: ColorsManager.black,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Image.asset(
-                              AssetManager.rightOfQuranDetails,
-                              color: ColorsManager.black,
-                            ),
-                          ),
-                        ],
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Image.asset(
+                        AssetManager.leftOfQuranDetails,
+                        color: ColorsManager.black,
                       ),
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      flex: 2,
+                      child: Text(
+                        textAlign: TextAlign.center,
+                        textDirection: TextDirection.rtl,
+                        hadith.title,
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w700,
+                          color: ColorsManager.black,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Image.asset(
+                        AssetManager.rightOfQuranDetails,
+                        color: ColorsManager.black,
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
+              ),
+              Expanded(
+                child: Container(
                   height: 380,
                   width: 265,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                        AssetManager.hadith_card_back_ground,
+                        AssetManager.hadithCardBackGround,
                       ),
                       fit: BoxFit.cover,
                       opacity: 3,
@@ -90,8 +92,8 @@ class HadithComponent extends StatelessWidget {
                           ),
                         ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

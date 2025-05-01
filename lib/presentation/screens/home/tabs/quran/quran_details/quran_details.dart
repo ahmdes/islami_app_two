@@ -73,7 +73,7 @@ class _QuranDetailsState extends State<QuranDetails> {
         ),
       ),
       bottomNavigationBar: Image.asset(
-        AssetManager.quran_details_bottom_image,
+        AssetManager.quranDetailsBottomImage,
       ),
     );
   }

@@ -11,27 +11,28 @@ class Hadith extends StatefulWidget {
 
   @override
   State<Hadith> createState() => _HadithState();
-
 }
 
 class _HadithState extends State<Hadith> {
- // late HadithModel hadith;
+  // late HadithModel hadith;
   @override
   void initState() {
     super.initState();
     getHadithDetails();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
       width: double.infinity,
       decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(
-                AssetManager.hadith_back_ground,
-              ),
-              fit: BoxFit.cover)),
+        image: DecorationImage(
+            image: AssetImage(
+              AssetManager.hadithBackGround,
+            ),
+            fit: BoxFit.cover),
+      ),
       child: Column(
         children: [
           SizedBox(
@@ -45,7 +46,10 @@ class _HadithState extends State<Hadith> {
             items: ConstantManager.hadithComponent,
             options: CarouselOptions(
               height: 518,
+              enlargeCenterPage: true,
+              viewportFraction: 0.7,
             ),
+
           ),
         ],
       ),
@@ -61,10 +65,10 @@ class _HadithState extends State<Hadith> {
       );
     }
   }
-  void getHadithDetails()async
-  {
-    for(int i=0;i<50;i++) {
-      HadithModel hadith=HadithModel(title: "", content:"", index:0);
+
+  void getHadithDetails() async {
+    for (int i = 0; i < 50; i++) {
+      HadithModel hadith = HadithModel(title: "", content: "", index: 0);
       String filePath = "assets/files/hadith/h${i + 1}.txt";
       hadith.content = await rootBundle.loadString(filePath);
       List<String> hadithLines = hadith.content.trim().split("\n");
@@ -79,4 +83,3 @@ class _HadithState extends State<Hadith> {
     });
   }
 }
-
