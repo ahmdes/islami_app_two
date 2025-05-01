@@ -1,3 +1,7 @@
+import 'dart:core';
+
+import 'package:flutter/cupertino.dart';
+import '../../presentation/screens/home/tabs/hadith/models/hadith.dart';
 import '../../presentation/screens/home/tabs/quran/models/sura.dart';
 import 'asset_manager.dart';
 
@@ -589,4 +593,8 @@ class ConstantManager {
       numberOfVerses: 6,
     ),
   ];
+
+  static List<HadithModel> hadith = [];
+
+  static List<Widget>hadithComponent=[];
 }
