@@ -5,9 +5,8 @@ import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.da
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/quran_details/quran_details.dart';
 
 class SurasList extends StatefulWidget {
-  const SurasList({super.key, required this.sura, required this.indexOfSura});
+  const SurasList({super.key, required this.sura});
   final SuraModel sura;
-  final int indexOfSura;
   @override
   State<SurasList> createState() => _SurasListState();
 }
@@ -20,7 +19,7 @@ class _SurasListState extends State<SurasList> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => QuranDetails(sura: widget.sura,indexOfSura: widget.indexOfSura,),
+            builder: (context) => QuranDetails(sura: widget.sura,indexOfSura: widget.sura.indexOfSura,),
           ),
         );
       },
@@ -36,13 +35,13 @@ class _SurasListState extends State<SurasList> {
                       child: Image.asset(AssetManager.decorationOfSuraNumber)),
                   Positioned(
                     top: 20,
-                    left: widget.indexOfSura <= 8
+                    left: widget.sura.indexOfSura <= 8
                         ? 33
-                        : widget.indexOfSura <= 98 && widget.indexOfSura >= 9
+                        : widget.sura.indexOfSura <= 98 && widget.sura.indexOfSura >= 9
                             ? 28
                             : 22,
                     child: Text(
-                      "${widget.indexOfSura + 1}",
+                      "${widget.sura.indexOfSura + 1}",
                       style: TextStyle(
                         color: ColorsManager.white,
                         fontSize: 20,

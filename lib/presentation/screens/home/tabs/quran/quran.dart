@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app_2/core/resources/constant_manager.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/sura.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/suras_list.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import '../../../../../core/resources/colors_manager.dart';
 import '../../../../../core/resources/asset_manager.dart';
 
@@ -13,8 +14,17 @@ class Quran extends StatefulWidget {
 }
 
 class _QuranState extends State<Quran> {
+  String searchKey = "";
   @override
   Widget build(BuildContext context) {
+    List<SuraModel> filteredSura = ConstantManager.surasList;
+    filteredSura = filteredSura
+        .where(
+          (sura) =>
+              sura.enSuraName.toLowerCase().contains(searchKey.toLowerCase(),) ||
+              sura.arSuraName.contains(searchKey),
+        )
+        .toList();
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -78,19 +88,21 @@ class _QuranState extends State<Quran> {
               وف نفس الوقت تكون بتبنيلي العناصر كلها مرة واحدة
               */
 
-              for (int i = 0; i < ConstantManager.surasList.length; i++)
-                SurasList(
-                  sura: ConstantManager.surasList[i],
-                  indexOfSura: i,
-                ),
-              // Expanded(
-              //   child: ListView.builder(
-              //     physics: NeverScrollableScrollPhysics(),
-              //       shrinkWrap: true,
-              //       itemCount:sura.length,itemBuilder: (context,index){
-              //     return SurasList(sura: sura[index],);
-              //   }),
-              // ),
+              // for (int i = 0; i < filteredSura.length; i++)
+              //   SurasList(
+              //     sura: filteredSura[i],
+              //     indexOfSura: i,
+              //   ),
+              ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                itemCount: filteredSura.length,
+                itemBuilder: (context, index) {
+                  return SurasList(
+                    sura: filteredSura[index],
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -99,7 +111,11 @@ class _QuranState extends State<Quran> {
   }
 
   Widget buildSearchField() {
-    return TextFormField(
+    return TextField(
+      onChanged: (value) {
+        searchKey = value;
+        setState(() {});
+      },
       cursorColor: ColorsManager.gold,
       style: TextStyle(
         fontWeight: FontWeight.w400,
