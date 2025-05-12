@@ -29,47 +29,45 @@ class _QuranDetailsState extends State<QuranDetails> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Spacer(
-                    flex: 1,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Spacer(
+                  flex: 1,
+                ),
+                Image.asset(
+                  AssetManager.leftOfQuranDetails,
+                ),
+                Spacer(
+                  flex: 7,
+                ),
+                Text(
+                  widget.sura.arSuraName,
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                    color: ColorsManager.gold,
                   ),
-                  Image.asset(
-                    AssetManager.leftOfQuranDetails,
-                  ),
-                  Spacer(
-                    flex: 7,
-                  ),
-                  Text(
-                    widget.sura.arSuraName,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w700,
-                      color: ColorsManager.gold,
-                    ),
-                  ),
-                  Spacer(
-                    flex: 7,
-                  ),
-                  Image.asset(
-                    AssetManager.rightOfQuranDetails,
-                  ),
-                  Spacer(
-                    flex: 1,
-                  ),
-                ],
-              ),
-              fileContent.isEmpty
-                  ? CircularProgressIndicator()
-                  : SuraContent(content:fileContent),
-            ],
-          ),
+                ),
+                Spacer(
+                  flex: 7,
+                ),
+                Image.asset(
+                  AssetManager.rightOfQuranDetails,
+                ),
+                Spacer(
+                  flex: 1,
+                ),
+              ],
+            ),
+            fileContent.isEmpty
+                ? CircularProgressIndicator()
+                : Expanded(child: SingleChildScrollView(child: SuraContent(content:fileContent))),
+          ],
         ),
       ),
       bottomNavigationBar: Image.asset(

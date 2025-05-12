@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app_2/core/resources/constant_manager.dart';
-import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/sura.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/suras_list.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import '../../../../../core/resources/colors_manager.dart';
 import '../../../../../core/resources/asset_manager.dart';
+import 'components/most_recently_list.dart';
 
 class Quran extends StatefulWidget {
   const Quran({super.key});
@@ -70,15 +70,7 @@ class _QuranState extends State<Quran> {
               SizedBox(
                 height: 15,
               ),
-              SizedBox(
-                height: 170,
-                child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: ConstantManager.sura.length,
-                    itemBuilder: (context, index) {
-                      return SuraComponent(sura: ConstantManager.sura[index]);
-                    }),
-              ),
+              MostRecentlyList(),
               SizedBox(
                 height: 20,
               ),
@@ -149,3 +141,5 @@ class _QuranState extends State<Quran> {
     );
   }
 }
+
+
