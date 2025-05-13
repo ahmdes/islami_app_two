@@ -3,6 +3,7 @@ import 'package:islami_app_2/core/resources/asset_manager.dart';
 import 'package:islami_app_2/core/resources/colors_manager.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/quran_details/quran_details.dart';
+import '../../../../../../core/prefs_manager/prefs_manager.dart';
 
 class SurasList extends StatefulWidget {
   const SurasList({super.key, required this.sura});
@@ -16,10 +17,14 @@ class _SurasListState extends State<SurasList> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+        PrefsManager.addSuraIndex(widget.sura.indexOfSura);
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => QuranDetails(sura: widget.sura,indexOfSura: widget.sura.indexOfSura,),
+            builder: (context) => QuranDetails(
+              sura: widget.sura,
+              indexOfSura: widget.sura.indexOfSura,
+            ),
           ),
         );
       },
@@ -37,7 +42,8 @@ class _SurasListState extends State<SurasList> {
                     top: 20,
                     left: widget.sura.indexOfSura <= 8
                         ? 33
-                        : widget.sura.indexOfSura <= 98 && widget.sura.indexOfSura >= 9
+                        : widget.sura.indexOfSura <= 98 &&
+                                widget.sura.indexOfSura >= 9
                             ? 28
                             : 22,
                     child: Text(

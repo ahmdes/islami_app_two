@@ -3,26 +3,8 @@ import 'dart:core';
 import 'package:flutter/cupertino.dart';
 import '../../presentation/screens/home/tabs/hadith/models/hadith.dart';
 import '../../presentation/screens/home/tabs/quran/models/sura.dart';
-import 'asset_manager.dart';
 
 class ConstantManager {
-  static List<SuraModel> sura = [
-    SuraModel(
-      arSuraName: "الأنبياء",
-      enSuraName: "Al-Anbiya",
-      numberOfVerses: 112,
-      image: AssetManager.quranSura,
-      indexOfSura: 0,
-    ),
-    SuraModel(
-      arSuraName: "الأنبياء",
-      enSuraName: "Al-Anbiya",
-      numberOfVerses: 112,
-      image: AssetManager.quranSura,
-      indexOfSura: 1,
-    ),
-  ];
-
   static List<SuraModel> surasList = [
     SuraModel(
         arSuraName: "الفاتحة",
