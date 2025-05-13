@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app_2/core/resources/colors_manager.dart';
-import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/sura.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/quran_details/quran_details.dart';
 import '../../../../../../core/resources/asset_manager.dart';
 import '../models/sura.dart';
