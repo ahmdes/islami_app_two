@@ -29,6 +29,7 @@ class _SurasListState extends State<SurasList> {
             builder: (context) => QuranDetails(
               sura: widget.sura,
               indexOfSura: widget.sura.indexOfSura,
+              mostRecentlyListStateKey: widget.mostRecentlyStateKey,
             ),
           ),
         );
