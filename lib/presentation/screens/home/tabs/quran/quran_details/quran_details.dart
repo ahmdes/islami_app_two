@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/most_recently_list.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import '../../../../../../core/resources/asset_manager.dart';
 import '../../../../../../core/resources/colors_manager.dart';
@@ -7,9 +8,11 @@ import 'components/sura_content.dart';
 
 class QuranDetails extends StatefulWidget {
   const QuranDetails(
-      {super.key, required this.sura, required this.indexOfSura,});
+      {super.key, required this.sura, required this.indexOfSura,this.mostRecentlyListStateKey});
   final SuraModel sura;
   final int indexOfSura;
+  final GlobalKey<MostRecentlyListState>?mostRecentlyListStateKey;
+
   @override
   State<QuranDetails> createState() => _QuranDetailsState();
 }
@@ -19,6 +22,7 @@ class _QuranDetailsState extends State<QuranDetails> {
   void dispose()
   {
     super.dispose();
+    widget.mostRecentlyListStateKey?.currentState?.refreshMostRecentlySuras();
   }
   String fileContent = "";
   @override
