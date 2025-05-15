@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami_app_2/core/prefs_manager/prefs_manager.dart';
 import 'package:islami_app_2/core/resources/constant_manager.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/components/suras_list.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
