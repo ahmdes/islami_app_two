@@ -9,10 +9,10 @@ class MostRecentlyList extends StatefulWidget {
   });
 
   @override
-  State<MostRecentlyList> createState() => _MostRecentlyListState();
+  State<MostRecentlyList> createState() => MostRecentlyListState();
 }
 
-class _MostRecentlyListState extends State<MostRecentlyList> {
+class MostRecentlyListState extends State<MostRecentlyList> {
   List<SuraModel> mostRecentlySuras = [];
 
   @override
@@ -35,7 +35,7 @@ class _MostRecentlyListState extends State<MostRecentlyList> {
           scrollDirection: Axis.horizontal,
           itemCount: mostRecentlySuras.length,
           itemBuilder: (context, index) {
-            return MostRecentComponent(sura: mostRecentlySuras[index]);
+            return MostRecentComponent(sura: mostRecentlySuras[index],);
           }),
     );
   }

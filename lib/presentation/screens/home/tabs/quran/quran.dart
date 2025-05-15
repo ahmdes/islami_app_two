@@ -14,6 +14,7 @@ class Quran extends StatefulWidget {
 }
 
 class _QuranState extends State<Quran> {
+  GlobalKey<MostRecentlyListState>mostRecentlyStateKey=GlobalKey<MostRecentlyListState>();
   String searchKey = "";
   @override
   Widget build(BuildContext context) {
@@ -70,7 +71,7 @@ class _QuranState extends State<Quran> {
               SizedBox(
                 height: 15,
               ),
-              MostRecentlyList(),
+              MostRecentlyList(key: mostRecentlyStateKey,),
               SizedBox(
                 height: 20,
               ),
@@ -92,6 +93,7 @@ class _QuranState extends State<Quran> {
                 itemBuilder: (context, index) {
                   return SurasList(
                     sura: filteredSura[index],
+                    mostRecentlyStateKey: mostRecentlyStateKey,
                   );
                 },
               ),

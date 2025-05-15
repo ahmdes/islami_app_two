@@ -7,7 +7,8 @@ class PrefsManager {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     List<String>mostRecentSuraIndexes=preferences.getStringList("mostRecentlyIndexes")??[];
     if(mostRecentSuraIndexes.contains("$suraIndex")) {
-      return;
+      mostRecentSuraIndexes.remove("$suraIndex");
+      mostRecentSuraIndexes.add("$suraIndex");
     }
     else
       {
@@ -23,9 +24,8 @@ class PrefsManager {
     for(int i=0;i<mostRecentSurasIndex.length;i++)
       {
         int suraIndex=int.parse(mostRecentSurasIndex[i]);
-
         mostRecentlySuras.add(ConstantManager.surasList[suraIndex]);
       }
-    return mostRecentlySuras;
+    return mostRecentlySuras.reversed.toList();
   }
 }

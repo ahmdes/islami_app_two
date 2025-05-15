@@ -4,19 +4,24 @@ import 'package:islami_app_2/core/resources/colors_manager.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/models/sura.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/quran/quran_details/quran_details.dart';
 import '../../../../../../core/prefs_manager/prefs_manager.dart';
+import 'most_recently_list.dart';
 
 class SurasList extends StatefulWidget {
-  const SurasList({super.key, required this.sura});
+   SurasList({super.key, required this.sura,required this.mostRecentlyStateKey});
   final SuraModel sura;
-  @override
+final GlobalKey<MostRecentlyListState>mostRecentlyStateKey;
+
+@override
   State<SurasList> createState() => _SurasListState();
 }
 
 class _SurasListState extends State<SurasList> {
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
+      onTap:
+          () {
         PrefsManager.addSuraIndex(widget.sura.indexOfSura);
         Navigator.push(
           context,

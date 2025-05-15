@@ -7,15 +7,19 @@ import 'components/sura_content.dart';
 
 class QuranDetails extends StatefulWidget {
   const QuranDetails(
-      {super.key, required this.sura, required this.indexOfSura});
+      {super.key, required this.sura, required this.indexOfSura,});
   final SuraModel sura;
   final int indexOfSura;
-
   @override
   State<QuranDetails> createState() => _QuranDetailsState();
 }
 
 class _QuranDetailsState extends State<QuranDetails> {
+  @override
+  void dispose()
+  {
+    super.dispose();
+  }
   String fileContent = "";
   @override
   Widget build(BuildContext context) {
