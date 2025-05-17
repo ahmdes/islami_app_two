@@ -33,4 +33,5 @@ class AssetManager{
   static const String hadithCardBackGround="$base/HadithCardBackGround.png";
   static const String radioBackGround="$base/radio_back_ground.png";
   static const String hadithBottomImage="$base/hadith_bottom_image.png";
+  static const String soundWave="$base/soundWave.png";
 }

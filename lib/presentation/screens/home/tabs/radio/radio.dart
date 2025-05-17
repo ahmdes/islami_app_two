@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app_2/core/resources/colors_manager.dart';
+import 'package:islami_app_2/core/resources/constant_manager.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/radio/model/radioDM.dart';
 
 import '../../../../../core/resources/asset_manager.dart';
-import 'components/RadioList.dart';
+import 'components/radioList.dart';
 
 class Radio extends StatefulWidget {
   const Radio({super.key});
@@ -20,6 +22,7 @@ class _RadioState extends State<Radio> {
       colorOfTextOfUnSelected = ColorsManager.white,
       colorOfRadioWord = ColorsManager.black,
       colorOfRecitersWord = ColorsManager.white;
+      List<RadioDM>shownList=ConstantManager.radioList;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,6 +55,8 @@ class _RadioState extends State<Radio> {
                     backGroundOfReciters = unSelectedColor;
                     colorOfRadioWord = colorOfTextOfSelected;
                     colorOfRecitersWord = colorOfTextOfUnSelected;
+                    shownList=ConstantManager.radioList;
+
                     setState(() {});
                   },
                   child: Container(
@@ -80,6 +85,7 @@ class _RadioState extends State<Radio> {
                     backGroundOfRadio = unSelectedColor;
                     colorOfRadioWord = colorOfTextOfUnSelected;
                     colorOfRecitersWord = colorOfTextOfSelected;
+                    shownList=ConstantManager.recitersList;
                     setState(() {});
                   },
                   child: Container(
@@ -107,10 +113,18 @@ class _RadioState extends State<Radio> {
           SizedBox(
             height: 30,
           ),
-          RadioList(),
+          Expanded(
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return RadioList(
+                  radio: shownList[index],
+                );
+              },
+              itemCount: shownList.length,
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
