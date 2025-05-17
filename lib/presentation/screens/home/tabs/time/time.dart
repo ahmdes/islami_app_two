@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import '../../../../../core/resources/asset_manager.dart';
 
-class Time extends StatefulWidget {
-  const Time({super.key});
+class Radio extends StatefulWidget {
+  const Radio({super.key});
 
   @override
-  State<Time> createState() => _TimeState();
+  State<Radio> createState() => _RadioState();
 }
 
-class _TimeState extends State<Time> {
+class _RadioState extends State<Radio> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("Time")),
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(AssetManager.radioBackGround), fit: BoxFit.cover),
+      ),
     );
   }
 }
