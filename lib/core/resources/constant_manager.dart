@@ -1,8 +1,11 @@
 import 'dart:core';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/radio/model/radioDM.dart';
 import '../../presentation/screens/home/tabs/hadith/models/hadith.dart';
 import '../../presentation/screens/home/tabs/quran/models/sura.dart';
+import 'asset_manager.dart';
 
 class ConstantManager {
   static List<SuraModel> surasList = [
@@ -581,4 +584,52 @@ class ConstantManager {
   static List<HadithModel> hadith = [];
 
   static List<Widget> hadithComponent = [];
+
+  static List<RadioDM> radioList = [
+    RadioDM(
+        name: "Radio Ibrahim Al-Akdar",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Radio Al-Qaria Yassen",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Radio Ahmed Al-trabulsi",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Radio Addokali Mohammad Alalim",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+  ];
+
+  static List<RadioDM> recitersList = [
+    RadioDM(
+        name: "Ibrahim Al-Akdar",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Al-Qaria Yassen",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Ahmed Al-trabulsi",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+    RadioDM(
+        name: "Addokali Mohammad Alalim",
+        backGroundImage: AssetManager.quranDetailsBottomImage,
+        playOrStop: Icons.play_arrow_rounded,
+        volumeOfSound: Icons.volume_up_sharp),
+  ];
+
+
 }
