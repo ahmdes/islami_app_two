@@ -111,7 +111,7 @@ class _RadioState extends State<Radio> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 5,
           ),
           Expanded(
             child: ListView.builder(

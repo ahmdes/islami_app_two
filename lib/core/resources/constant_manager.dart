@@ -3,6 +3,8 @@ import 'dart:core';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:islami_app_2/presentation/screens/home/tabs/radio/model/radioDM.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/time/components/pray_time.dart';
+import 'package:islami_app_2/presentation/screens/home/tabs/time/models/pray_time_d_m.dart';
 import '../../presentation/screens/home/tabs/hadith/models/hadith.dart';
 import '../../presentation/screens/home/tabs/quran/models/sura.dart';
 import 'asset_manager.dart';
@@ -631,5 +633,41 @@ class ConstantManager {
         volumeOfSound: Icons.volume_up_sharp),
   ];
 
-
+  static List<PrayTime> prayTimesList = [
+    PrayTime(
+      prayTimeDM: PrayTimeDM(
+        nameOfPray: "ASR",
+        timeOfPray: "04:38",
+        amOrPm: 'PM',
+      ),
+    ),
+    PrayTime(
+      prayTimeDM: PrayTimeDM(
+        nameOfPray: "ASR",
+        timeOfPray: "04:38",
+        amOrPm: 'PM',
+      ),
+    ),
+    PrayTime(
+      prayTimeDM: PrayTimeDM(
+        nameOfPray: "ASR",
+        timeOfPray: "04:38",
+        amOrPm: 'PM',
+      ),
+    ),
+    PrayTime(
+      prayTimeDM: PrayTimeDM(
+        nameOfPray: "ASR",
+        timeOfPray: "04:38",
+        amOrPm: 'PM',
+      ),
+    ),
+    PrayTime(
+      prayTimeDM: PrayTimeDM(
+        nameOfPray: "ASR",
+        timeOfPray: "04:38",
+        amOrPm: 'PM',
+      ),
+    ),
+  ];
 }

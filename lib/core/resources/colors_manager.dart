@@ -10,6 +10,9 @@ class ColorsManager{
   static const Color white=Color(0xffFFFFFF);
   static const Color transparent=Colors.transparent;
   static const Color blackWithObacity20=Color(0xff20202033);
+  static const Color highKaramel=Color(0xff856B3F);
+
+
 
 
 }

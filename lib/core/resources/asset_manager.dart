@@ -34,4 +34,12 @@ class AssetManager{
   static const String radioBackGround="$base/radio_back_ground.png";
   static const String hadithBottomImage="$base/hadith_bottom_image.png";
   static const String soundWave="$base/soundWave.png";
+  static const String timeBackGround="$base/timeBackGround.png";
+  static const String vectorOne="$base/vector_one.png";
+  static const String vectorTwo="$base/vector_two.png";
+  static const String eveningAzkar="$base/morning_azkar.png";
+  static const String morningAzkar="$base/evening_azkar.png";
+
+
+
 }
